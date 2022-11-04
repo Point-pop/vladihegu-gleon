@@ -1,13 +1,13 @@
 #!/bin/bash
 
-apt update -y
-apt install git ufw -y
+yum update -y
+yum install git ufw -y
 
 ufw allow 22
 ufw --force enable
 ufw status
 
-apt install nginx -y
+yum install nginx -y
 
 service nginx status | grep 'enabled;' 
 service ufw status |grep 'enabled;'
@@ -20,11 +20,11 @@ ufw status
 cp page1.html /var/www/html/vladihegu.html
 
 service nginx stop
-apt install php -y
+yum install php -y
 
 cp lola.php /var/www/html/lola.php
 
-apt install mysql-server -y
+yum install mysql-server -y
 
 mysql -e "CREATE DATABASE wordpress"
 mysql -e "CREATE USER 'wp_user'@'localhost' IDENTIFIED BY 'password';"
@@ -41,6 +41,6 @@ tar -xzvf /var/www/latest.tar.gz -C /var/www/
 cp wp-config.php /var/www/wordpress/wp-config.php
 mv /var/www/wordpress/ /var/www/html/wordpress/
 
-sudo apt-get install php-mysqlnd -y
+sudo yum-get install php-mysqlnd -y
 
 service apache2 restart
