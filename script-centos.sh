@@ -17,9 +17,9 @@ ufw status
 
 #curl localhost:80
 
-cp page1.html /var/www/html/vladihegu.html
-
 service nginx stop
+yum install httpd -y
+cp page1.html /var/www/html/vladihegu.html
 yum install php -y
 
 cp lola.php /var/www/html/lola.php
