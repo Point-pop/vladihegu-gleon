@@ -41,6 +41,6 @@ tar -xzvf /var/www/latest.tar.gz -C /var/www/
 cp wp-config.php /var/www/wordpress/wp-config.php
 mv /var/www/wordpress/ /var/www/html/wordpress/
 
-sudo yum-get install php-mysqlnd -y
+sudo yum install php-mysqlnd -y
 
-service apache2 restart
+service httpd restart
